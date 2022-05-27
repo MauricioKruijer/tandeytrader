@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "get-chart-url": "packages/apps/get-chart-url",
     "my-app": "packages/apps/my-app",
     "store-chat": "packages/libs/store-chat"
   }

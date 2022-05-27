@@ -1,0 +1,64 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/apps/get-chart-url/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/apps/get-chart-url",
+        "main": "packages/apps/get-chart-url/src/main.ts",
+        "tsConfig": "packages/apps/get-chart-url/tsconfig.app.json",
+        "assets": ["packages/apps/get-chart-url/src/assets"],
+        "outputFileName": "index.js",
+        "generatePackageJson": true
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/apps/get-chart-url/src/environments/environment.ts",
+              "with": "packages/apps/get-chart-url/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "apps-get-chart-url:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/apps/get-chart-url/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/apps/get-chart-url"],
+      "options": {
+        "jestConfig": "packages/apps/get-chart-url/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "deploy-cloud-functions": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "gcloud functions deploy get-chart-url --region=us-central1 --runtime nodejs16 --entry-point=get-chart-url --trigger-http --source ./dist/packages/apps/get-chart-url --allow-unauthenticated --project {args.gcpProject}"
+        ]
+      },
+      "color": true,
+      "parallel": false
+    }
+  },
+  "tags": []
+}
