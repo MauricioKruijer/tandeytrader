@@ -2,7 +2,9 @@
   "name": "cloud-func",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "serve:get-chart-url": "cd dist/packages/apps/get-chart-url; nodemon -w . -e js -x npx functions-framework --target=get-chart-url"
+  },
   "private": true,
   "devDependencies": {
     "@nrwl/cli": "14.1.9",
@@ -19,6 +21,7 @@
     "eslint": "~8.12.0",
     "eslint-config-prettier": "8.1.0",
     "jest": "27.5.1",
+    "nodemon": "^2.0.16",
     "nx": "14.1.9",
     "prettier": "^2.5.1",
     "ts-jest": "27.1.4",

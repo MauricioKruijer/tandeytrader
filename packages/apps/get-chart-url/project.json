@@ -29,9 +29,11 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/node:node",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "buildTarget": "apps-get-chart-url:build"
+        "commands": [
+          "cd dist/packages/apps/get-chart-url; nodemon -w . -e js -x npx functions-framework --target=get-chart-url --port=8081"
+        ]
       }
     },
     "lint": {

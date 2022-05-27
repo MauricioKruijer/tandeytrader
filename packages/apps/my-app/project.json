@@ -29,9 +29,11 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/node:node",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "buildTarget": "apps-my-app:build"
+        "commands": [
+          "cd dist/packages/apps/my-app; nodemon -w . -e js -x npx functions-framework --target=hello --port=8080"
+        ]
       }
     },
     "lint": {
