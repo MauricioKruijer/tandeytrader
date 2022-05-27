@@ -1,4 +1,5 @@
 import * as express from 'express'
+import {libsStoreChat} from '@tandeytrader/libs/store-chat'
 import 'tslib'
 
 const app = express();
