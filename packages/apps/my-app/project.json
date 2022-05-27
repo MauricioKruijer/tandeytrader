@@ -53,7 +53,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "..."
+          "gcloud functions deploy hello --region=us-central1 --runtime nodejs16 --entry-point=hello --trigger-http --source ./dist/packages/apps/my-app --allow-unauthenticated --project {args.gcpProject}"
         ]
       },
       "color": true,
