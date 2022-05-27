@@ -48,6 +48,16 @@
         "jestConfig": "packages/apps/my-app/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "deploy-cloud-functions": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "..."
+        ]
+      },
+      "color": true,
+      "parallel": false
     }
   },
   "tags": []
