@@ -3,7 +3,7 @@
   "version": 2,
   "projects": {
     "get-chart-url": "packages/apps/get-chart-url",
-    "my-app": "packages/apps/my-app",
+    "dolladollabillbot": "packages/apps/dolladollabillbot",
     "store-chat": "packages/libs/store-chat"
   }
 }
