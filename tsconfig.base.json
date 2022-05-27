@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cloud-func/libs/store-chat": ["packages/libs/store-chat/src/index.ts"]
+      "@tandeytrader/libs/store-chat": ["packages/libs/store-chat/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

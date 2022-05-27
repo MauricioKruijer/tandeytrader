@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'apps-my-app',
+  displayName: 'apps-dolladollabillbot',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -12,5 +12,5 @@ export default {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/packages/apps/my-app',
+  coverageDirectory: '../../../coverage/packages/apps/dolladollabillbot',
 };

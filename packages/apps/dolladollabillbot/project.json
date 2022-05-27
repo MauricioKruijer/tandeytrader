@@ -1,16 +1,16 @@
 {
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/apps/my-app/src",
+  "sourceRoot": "packages/apps/dolladollabillbot/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/node:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/apps/my-app",
-        "main": "packages/apps/my-app/src/main.ts",
-        "tsConfig": "packages/apps/my-app/tsconfig.app.json",
-        "assets": ["packages/apps/my-app/src/assets"],
+        "outputPath": "dist/packages/apps/dolladollabillbot",
+        "main": "packages/apps/dolladollabillbot/src/main.ts",
+        "tsConfig": "packages/apps/dolladollabillbot/tsconfig.app.json",
+        "assets": ["packages/apps/dolladollabillbot/src/assets"],
         "outputFileName": "index.js",
         "generatePackageJson": true
       },
@@ -21,8 +21,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "packages/apps/my-app/src/environments/environment.ts",
-              "with": "packages/apps/my-app/src/environments/environment.prod.ts"
+              "replace": "packages/apps/dolladollabillbot/src/environments/environment.ts",
+              "with": "packages/apps/dolladollabillbot/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -32,7 +32,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "cd dist/packages/apps/my-app; nodemon -w . -e js -x npx functions-framework --target=hello --port=8080"
+          "cd dist/packages/apps/dolladollabillbot; nodemon -w . -e js -x npx functions-framework --target=dolladollabillbot --port=8080"
         ]
       }
     },
@@ -40,14 +40,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/apps/my-app/**/*.ts"]
+        "lintFilePatterns": ["packages/apps/dolladollabillbot/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/apps/my-app"],
+      "outputs": ["coverage/packages/apps/dolladollabillbot"],
       "options": {
-        "jestConfig": "packages/apps/my-app/jest.config.ts",
+        "jestConfig": "packages/apps/dolladollabillbot/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -55,7 +55,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "gcloud functions deploy hello --region=us-central1 --runtime nodejs16 --entry-point=hello --trigger-http --source ./dist/packages/apps/my-app --allow-unauthenticated --project {args.gcpProject}"
+          "gcloud functions deploy dolladollabillbot --region=us-central1 --runtime nodejs16 --entry-point=dolladollabillbot --trigger-http --source ./dist/packages/apps/dolladollabillbot --allow-unauthenticated --project {args.gcpProject}"
         ]
       },
       "color": true,

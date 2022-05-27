@@ -1,7 +1,7 @@
 {
   "extends": "nx/presets/core.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "cloud-func",
+  "npmScope": "tandeytrader",
   "affected": {
     "defaultBase": "main"
   },
@@ -16,5 +16,5 @@
       }
     }
   },
-  "defaultProject": "my-app"
+  "defaultProject": "dolladollabillbot"
 }
