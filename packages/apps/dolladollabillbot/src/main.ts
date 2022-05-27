@@ -1,9 +1,14 @@
-import { http } from '@google-cloud/functions-framework'
-import {libsStoreChat} from "@tandeytrader/libs/store-chat";
+import * as express from 'express'
 import 'tslib'
 
-http('dolladollabillbot', (req, res) => {
-  const result = libsStoreChat();
-  res.send(result || 'Hello world! bruf');
+const app = express();
+
+app.get('/', async (req, res) => {
+  res.send('Hi')
 })
 
+app.post('/telegraf', async (req, res) => {
+  res.send({message: 'OK'})
+})
+
+exports.dolladollabillbot = app
