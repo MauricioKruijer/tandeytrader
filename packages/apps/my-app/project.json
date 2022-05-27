@@ -11,6 +11,7 @@
         "main": "packages/apps/my-app/src/main.ts",
         "tsConfig": "packages/apps/my-app/tsconfig.app.json",
         "assets": ["packages/apps/my-app/src/assets"],
+        "outputFileName": "index.js",
         "generatePackageJson": true
       },
       "configurations": {
