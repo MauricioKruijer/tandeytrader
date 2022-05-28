@@ -11,11 +11,10 @@ To run this on local environments do the following steps:
 
 You have to maintain 2 environment files for each app (for now). The .env.yaml file is used for google cloud functions deploy script. The other .env is used by `nx`.
 
-Copy example files and update the proper values
+Run the following command to copy all example env files at once. Update the values afterwards in the newly created files
 
 ```shell
-cp ./packages/apps/dolladollabillbot/.env.example ./packages/apps/dolladollabillbot/.local.env
-cp ./packages/apps/dolladollabillbot/.env.yaml.example ./packages/apps/dolladollabillbot/.env.yaml
+nx init-env
 ```
 
 ## Install dependencies
@@ -31,6 +30,8 @@ You can add `--watch` to this command too.
 nx run-many --target=build --all
 ```
 
+Use the `--prod` flag for a production build.
+
 ## Serving the apps locally
 
 ```shell
@@ -40,5 +41,5 @@ nx run-many --target=serve --all
 ## Deploying to google cloud platform
 
 ```shell
-nx deploy --gcpProject=INSERT_YOUR_GCP_PROJECT_NAME --output=stream
+nx deploy --gcpProject=YOUR_GCP_PROJECT_NAME --output=stream
 ```
