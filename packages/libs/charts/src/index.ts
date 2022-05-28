@@ -1,1 +1,1 @@
-export * from './lib/libs-charts';
+export * from './lib/charts';

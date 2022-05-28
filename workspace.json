@@ -4,7 +4,7 @@
   "projects": {
     "dolladollabillbot": "packages/apps/dolladollabillbot",
     "get-chart-url": "packages/apps/get-chart-url",
-    "libs-charts": "packages/libs/charts",
+    "charts": "packages/libs/charts",
     "store-conversation": "packages/libs/store-conversation"
   }
 }

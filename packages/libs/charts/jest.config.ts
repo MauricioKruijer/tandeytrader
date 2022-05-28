@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'libs-charts',
+  displayName: 'charts',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
