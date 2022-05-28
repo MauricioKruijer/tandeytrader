@@ -41,5 +41,5 @@ nx run-many --target=serve --all
 ## Deploying to google cloud platform
 
 ```shell
-nx deploy --gcpProject=YOUR_GCP_PROJECT_NAME --output=stream
+nx deploy --gcpProject=YOUR_GCP_PROJECT_NAME --output-style=stream
 ```
