@@ -1,7 +1,9 @@
 import 'tslib'
 import * as express from 'express'
 import { Telegraf } from 'telegraf'
-import {libsStoreChat} from '@tandeytrader/libs/store-chat'
+import {storeConversation} from '@tandeytrader/libs/store-conversation'
+
+console.log('lib function test', storeConversation())
 
 const { BOT_TOKEN, WEBHOOK_URL, DEV } = process.env
 const version = 'v1-bot'
