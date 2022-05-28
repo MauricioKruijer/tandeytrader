@@ -60,6 +60,17 @@
       },
       "color": true,
       "parallel": false
+    },
+    "init-env": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "cp ./packages/apps/dolladollabillbot/.env.example ./packages/apps/dolladollabillbot/.env",
+          "cp ./packages/apps/dolladollabillbot/.env.yaml.example ./packages/apps/dolladollabillbot/.env.yaml"
+        ]
+      },
+      "color": true,
+      "parallel": false
     }
   },
   "tags": []
