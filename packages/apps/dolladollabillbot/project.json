@@ -65,7 +65,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "cp ./packages/apps/dolladollabillbot/.env.example ./packages/apps/dolladollabillbot/.env",
+          "cp ./packages/apps/dolladollabillbot/.env.example ./packages/apps/dolladollabillbot/.local.env",
           "cp ./packages/apps/dolladollabillbot/.env.yaml.example ./packages/apps/dolladollabillbot/.env.yaml"
         ]
       },
