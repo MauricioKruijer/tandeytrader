@@ -4,8 +4,10 @@ import 'tslib'
 
 const app = express();
 
+const { BOT_TOKEN, DEV } = process.env;
+
 app.get('/', async (req, res) => {
-  res.send('Hi')
+  res.send('Your token is ' + BOT_TOKEN)
 })
 
 app.post('/telegraf', async (req, res) => {
