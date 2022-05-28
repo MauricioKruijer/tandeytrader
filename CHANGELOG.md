@@ -1,5 +1,11 @@
 # Release Notes
 
+## v1.2.0 - 2022-05-28
+
+### Changed
+
+- Added puppeteer and get-chart-url cloud function in https://github.com/MauricioKruijer/tandeytrader/pull/4
+
 ## v1.1.0 - 2022-05-28
 
 ### Changed
