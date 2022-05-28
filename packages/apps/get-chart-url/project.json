@@ -55,7 +55,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "gcloud functions deploy get-chart-url --region=us-central1 --runtime nodejs16 --entry-point=get-chart-url --trigger-http --source ./dist/packages/apps/get-chart-url --allow-unauthenticated --project {args.gcpProject}"
+          "gcloud functions deploy get-chart-url --memory 1024MB --region=us-central1 --runtime nodejs16 --entry-point=get-chart-url --trigger-http --source ./dist/packages/apps/get-chart-url --allow-unauthenticated --project {args.gcpProject}"
         ]
       },
       "color": true,
