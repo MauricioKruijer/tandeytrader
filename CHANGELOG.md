@@ -1,5 +1,11 @@
 # Release Notes
 
+## v2.0.0 - 2022-05-28
+
+### Changed
+
+- Added feature Firestore store-conversation in https://github.com/MauricioKruijer/tandeytrader/pull/5
+
 ## v1.2.0 - 2022-05-28
 
 ### Changed
