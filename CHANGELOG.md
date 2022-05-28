@@ -1,5 +1,11 @@
 # Release Notes
 
+## v1.1.0 - 2022-05-28
+
+### Changed
+
+- Added support for telegraf, run a bot and register webhook https://github.com/MauricioKruijer/tandeytrader/pull/3
+
 ## v1.0.0 - 2022-05-28
 
 ### Changed
