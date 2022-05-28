@@ -2,7 +2,7 @@ import 'tslib'
 import { http } from '@google-cloud/functions-framework'
 import * as puppeteer from 'puppeteer'
 
-const getChartUrl = async () => {
+const getChartUrl = async (chartId: string) => {
   const browser = await puppeteer.launch({
     headless: true,
     defaultViewport: {
@@ -11,17 +11,50 @@ const getChartUrl = async () => {
     }
   })
 
-  try {
-    const page = await browser.newPage();
-    await page.goto('https://www.github.com')
-    await page.waitForSelector('img.home-astro-mona.width-full')
+  return new Promise( async (resolve, reject) => {
+    const timer = setTimeout(() => {
+      browser.close()
+      reject({error: 'Took too long to get url'})
+    }, 30 * 1000)
 
-    const url = await page.$eval('img.home-astro-mona.width-full', (image: HTMLImageElement) => image.src)
+    try {
+      const tradingview = await browser.newPage()
+      await tradingview.goto(`https://www.tradingview.com/chart/${chartId}/`, {
+        waitUntil: 'networkidle2',
+        timeout: 0
+      })
 
-    return url
-  } catch (e) {
-    throw e;
-  }
+      tradingview.on('popup', async(newTab) => {
+        await newTab.waitForSelector('main > img')
+        const url = await newTab.$eval('main > img', (image: HTMLImageElement) => image.src)
+
+        browser.close()
+        clearTimeout(timer)
+        resolve(url)
+      })
+
+      await tradingview.click('#header-toolbar-screenshot')
+      await tradingview.click('div[data-name="open-image-in-new-tab"]')
+    } catch (e) {
+      browser.close()
+      reject(e)
+    }
+  })
 }
 
-http('get-chart-url',async (req, res) => res.send('ok! ' + await getChartUrl()))
+http('get-chart-url', async (req, res) => {
+  let data = {}
+  try {
+    if (req.method !== 'POST') {
+      const error = new Error('Only POST requests are accepted')
+      throw error
+    }
+
+    data = {url: await getChartUrl(req.body.chartId)}
+  } catch(e) {
+    console.log(e)
+    data = {error: 'something went wrong'}
+  } finally {
+    return res.status(200).send(data);
+  }
+})
