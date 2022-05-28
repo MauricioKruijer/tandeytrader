@@ -1,10 +1,10 @@
 import 'tslib'
 import * as express from 'express'
 import { Telegraf } from 'telegraf'
-import {libsStoreChat} from '@tandeytrader/libs/store-chat'
+import {storeConversation} from '@tandeytrader/libs/store-conversation'
 
 const { BOT_TOKEN, WEBHOOK_URL, DEV } = process.env
-const version = 'v1-bot'
+const version = 'v2-bot'
 const app = express()
 
 if (BOT_TOKEN === undefined || BOT_TOKEN === '') {
@@ -19,6 +19,21 @@ bot.telegram.getWebhookInfo().then(({url}) => {
   }
 }).catch(err => {
   console.log({err})
+})
+
+bot.use(async (ctx, next) => {
+  const start = new Date();
+
+  try {
+    await storeConversation(ctx.chat);
+    await next();
+  } catch (err) {
+    console.log('Caught error', err);
+  }
+
+  const ms = new Date().getTime() - start.getTime();
+
+  console.log(`Response time ms %sms`, ms);
 })
 
 bot.command('hello', (ctx) => {

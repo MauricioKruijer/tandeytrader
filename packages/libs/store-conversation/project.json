@@ -1,20 +1,20 @@
 {
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/libs/store-chat/src",
+  "sourceRoot": "packages/libs/store-conversation/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/libs/store-chat/**/*.ts"]
+        "lintFilePatterns": ["packages/libs/store-conversation/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/libs/store-chat"],
+      "outputs": ["coverage/packages/libs/store-conversation"],
       "options": {
-        "jestConfig": "packages/libs/store-chat/jest.config.ts",
+        "jestConfig": "packages/libs/store-conversation/jest.config.ts",
         "passWithNoTests": true
       }
     }

@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'libs-store-chat',
+  displayName: 'store-conversation',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -12,5 +12,5 @@ export default {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/packages/libs/store-chat',
+  coverageDirectory: '../../../coverage/packages/libs/store-conversation',
 };
