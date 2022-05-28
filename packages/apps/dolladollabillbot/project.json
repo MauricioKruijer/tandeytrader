@@ -55,7 +55,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "gcloud functions deploy dolladollabillbot --region=us-central1 --runtime nodejs16 --entry-point=dolladollabillbot --trigger-http --source ./dist/packages/apps/dolladollabillbot --allow-unauthenticated --project {args.gcpProject}"
+          "gcloud functions deploy dolladollabillbot --region=us-central1 --runtime nodejs16 --entry-point=dolladollabillbot --trigger-http --source ./dist/packages/apps/dolladollabillbot --allow-unauthenticated --project {args.gcpProject} --env-vars-file ./packages/apps/dolladollabillbot/.env.yaml"
         ]
       },
       "color": true,
