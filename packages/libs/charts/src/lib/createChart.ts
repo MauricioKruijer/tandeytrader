@@ -1,6 +1,6 @@
 import { db } from './db'
 
-export const createCharts = async (chartId: string, alertType: string, description: string) => {
+export const createChart = async (chartId: string, alertType: string, description: string) => {
   const docRef = db.collection('charts').doc(`${chartId}`);
   const chart = await docRef.get();
   await docRef.collection('alerts').doc(alertType).set({ description });
