@@ -1,5 +1,11 @@
 # Release Notes
 
+## v3.0.0 - 2022-05-28
+
+### Changed
+
+- Added tradingview alert webhooks support in https://github.com/MauricioKruijer/tandeytrader/pull/6
+
 ## v2.0.0 - 2022-05-28
 
 ### Changed

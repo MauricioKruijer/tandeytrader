@@ -2,8 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "get-chart-url": "packages/apps/get-chart-url",
     "dolladollabillbot": "packages/apps/dolladollabillbot",
+    "get-chart-url": "packages/apps/get-chart-url",
+    "charts": "packages/libs/charts",
     "store-conversation": "packages/libs/store-conversation"
   }
 }

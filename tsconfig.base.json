@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tandeytrader/libs/store-conversation": ["packages/libs/store-conversation/src/index.ts"]
+      "@tandeytrader/libs/charts": ["packages/libs/charts/src/index.ts"],
+      "@tandeytrader/libs/store-conversation": [
+        "packages/libs/store-conversation/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
