@@ -1,5 +1,11 @@
 # Release Notes
 
+## v3.1.0 - 2022-05-29
+
+### Changed
+
+- Added feature dark theme charts in https://github.com/MauricioKruijer/tandeytrader/pull/7
+
 ## v3.0.0 - 2022-05-28
 
 ### Changed
