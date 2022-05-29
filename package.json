@@ -1,6 +1,6 @@
 {
   "name": "tandeytrader",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "license": "MIT",
   "scripts": {
     "serve:get-chart-url": "cd dist/packages/apps/get-chart-url; nodemon -w . -e js -x npx functions-framework --target=get-chart-url"
