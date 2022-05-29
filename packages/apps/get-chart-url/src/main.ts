@@ -2,6 +2,13 @@ import 'tslib'
 import { http } from '@google-cloud/functions-framework'
 import * as puppeteer from 'puppeteer'
 
+const enableDarkCharts = async (page) => {
+  await page.waitForSelector('div.layout__area--topleft div[data-role="button"]')
+  await page.click('div.layout__area--topleft div[data-role="button"]')
+  await page.waitForSelector('#theme-switcher')
+  await page.click('#theme-switcher')
+}
+
 const getChartUrl = async (chartId: string) => {
   const browser = await puppeteer.launch({
     headless: true,
@@ -23,6 +30,12 @@ const getChartUrl = async (chartId: string) => {
         waitUntil: 'networkidle2',
         timeout: 0
       })
+
+      const currentTheme = await tradingview.evaluate(() => localStorage.getItem('tradingview.current_theme.name'))
+
+      if (currentTheme === 'light') {
+        await enableDarkCharts(tradingview)
+      }
 
       tradingview.on('popup', async(newTab) => {
         await newTab.waitForSelector('main > img')
