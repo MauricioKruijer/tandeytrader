@@ -24,18 +24,18 @@ bot.telegram.getWebhookInfo().then(({url}) => {
 })
 
 bot.use(async (ctx, next) => {
-  const start = new Date();
+  const start = new Date()
 
   try {
-    await storeConversation(ctx.chat);
-    await next();
+    await storeConversation(ctx.chat)
+    await next()
   } catch (err) {
-    console.log('Caught error', err);
+    console.log('Caught error', err)
   }
 
-  const ms = new Date().getTime() - start.getTime();
+  const ms = new Date().getTime() - start.getTime()
 
-  console.log(`Response time ms %sms`, ms);
+  console.log(`Response time ms %sms`, ms)
 })
 
 bot.command('hello', (ctx) => {
@@ -71,9 +71,9 @@ app.post(`/charts/:chartId/:alertType`, async (req, res) => {
       await bot.telegram.sendPhoto(chatId, url, { caption: description })
     })
   } catch (error) {
-    console.log('error', error);
+    console.log('error', error)
   } finally {
-    return res.send({ version, message: 'done' });
+    return res.send({ version, message: 'done' })
   }
 })
 

@@ -68,6 +68,6 @@ http('get-chart-url', async (req, res) => {
     console.log(e)
     data = {error: 'something went wrong'}
   } finally {
-    return res.status(200).send(data);
+    return res.status(200).send(data)
   }
 })
