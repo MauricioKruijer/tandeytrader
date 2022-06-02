@@ -2,9 +2,10 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "charts": "packages/libs/charts",
     "dolladollabillbot": "packages/apps/dolladollabillbot",
     "get-chart-url": "packages/apps/get-chart-url",
-    "charts": "packages/libs/charts",
+    "process-positions": "packages/libs/process-positions",
     "store-conversation": "packages/libs/store-conversation"
   }
 }
