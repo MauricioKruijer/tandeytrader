@@ -1,5 +1,11 @@
 # Release Notes
 
+## v3.1.1 - 2022-06-07
+
+### Changed
+
+- Fixed bug where description containing dynamic info was empty in https://github.com/MauricioKruijer/tandeytrader/pull/9
+
 ## v3.1.0 - 2022-05-29
 
 ### Changed
