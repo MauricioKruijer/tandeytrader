@@ -1,1 +1,1 @@
-export * from './lib/portfolio';
+export * from './portfolio';
