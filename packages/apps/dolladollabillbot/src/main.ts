@@ -58,11 +58,11 @@ app.post('/telegraf', async (req, res) => {
 
 app.post(`/charts/:chartId/:alertType`, async (req, res) => {
   const {chartId, alertType} = req.params
-  const description = req.body.description || ''
 
   try {
     const {data} = await axios.post(GET_CHART_URL_ENDPOINT, { chartId })
     const url = data.url
+    const description = req.body.description
 
     createChart(chartId, alertType, description)
 
