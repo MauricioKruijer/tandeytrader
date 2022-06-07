@@ -4,6 +4,7 @@ import * as express from 'express'
 import { Telegraf } from 'telegraf'
 import {storeConversation} from '@tandeytrader/libs/store-conversation'
 import { createChart, getChartSubscribers } from '@tandeytrader/libs/charts'
+import { positionsCommand } from './app/commands/positions'
 
 const { BOT_TOKEN, WEBHOOK_URL, GET_CHART_URL_ENDPOINT, DEV } = process.env
 const version = 'v2-bot'
@@ -41,6 +42,8 @@ bot.use(async (ctx, next) => {
 bot.command('hello', (ctx) => {
   ctx.reply('Hello, friend!')
 })
+
+positionsCommand(bot)
 
 app.use(express.json())
 
