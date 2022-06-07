@@ -2,7 +2,7 @@ import { getAllOpenPositionsFromUserPortfolio } from './getAllOpenPositionsFromU
 
 const formatInfoForSymbol = (item: string) => {
   return  `
-Symbol or ISIN: ${item}
+Ticker: ${item}
 Amount: 12000
 Rate: $0.18267 ₿0.000006026
 Value: $2,192.04 ₿0.072312
@@ -18,12 +18,12 @@ const showAllOpenPositions = () => {
   return positions.map(formatInfoForSymbol).join(`\n=====\n`)
 }
 
-const getTickerSymbolFromUserPortfolio = () => {
+const getTickerSymbolsFromUserPortfolio = () => {
   return ['CRO', 'BTC', 'ETH', 'SOL']
 }
 
 const validateTickerSymbol = (symbol: string): void => {
-  const knownSymbols = getTickerSymbolFromUserPortfolio()
+  const knownSymbols = getTickerSymbolsFromUserPortfolio()
 
   if (!knownSymbols.includes(symbol)) {
     throw new Error(`Symbol ${symbol} not found in portfolio`)
