@@ -1,6 +1,4 @@
-const getAllOpenPositionsFromUserPortfolio = (): string[] => {
-  return ['CRO', 'BTC']
-}
+import { getAllOpenPositionsFromUserPortfolio } from './getAllOpenPositionsFromUserPortfolio'
 
 const formatInfoForSymbol = (item: string) => {
   return  `
